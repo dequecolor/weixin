@@ -35,7 +35,9 @@ class Handle(object):
         try:
             webdata = web.data()
             print("Handle Post webdata is ",webdata)
+            print('hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh')
             #后台打日志
+            print('hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh')
             recMsg = receive.parse_xml(webdata)
             print ("isinstance Msg",isinstance(recMsg, receive.Msg))
             print (type(recMsg))

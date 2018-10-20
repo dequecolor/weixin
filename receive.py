@@ -5,10 +5,14 @@
 import xml.etree.ElementTree as ET
 
 def parse_xml(web_data):
+    print('length of web_data',len(web_data))
     if len(web_data) == 0:
         return None
-    xmlData = ET.fromstring(web_data)
+    xmlData = ET.fromstring(web_data) 
+    print('hhhhhhhhhhhhhhhhhhhhhh')
+
     msg_type = xmlData.find('MsgType').text
+    print('hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh')
     if msg_type == 'text':
         return TextMsg(xmlData)
     elif msg_type == 'image':
@@ -28,5 +32,8 @@ class ImageMsg(Msg):
     def __init__(self, xmlData):
         Msg.__init__(self, xmlData)
         self.PicUrl = xmlData.find('PicUrl').text
+        print('*****************************************')
+        print(type(xmlData.find('MediaID')))
         self.MediaId = xmlData.find('MediaId').text
+        print('**************************************')
 
