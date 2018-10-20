@@ -56,6 +56,6 @@ class Handle(object):
                     return reply.Msg().send()
             else:
                 print("暂且不处理")
-                return "success"
+                return reply.Msg().send()
         except Exception, Argument:
             return Argument
